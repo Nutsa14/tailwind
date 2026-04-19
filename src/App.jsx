@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 
 function App() {
 
-  // 🧠 გახსოვს? როდესაც ხატავ და ფანქარს ირჩევ —
+  // გახსოვს? როდესაც ხატავ და ფანქარს ირჩევ —
   // კომპიუტერიც ასე "ახსოვს" რომელი ღილაკი აირჩიე.
   // selectedRating = რომელ ციფრს დააჭირე (1,2,3,4 ან 5)
   // null ნიშნავს "ჯერ არაფერი არ აურჩევია"
   const [selectedRating, setSelectedRating] = useState(null);
 
-  // 🧠 isSubmitted = "დააჭირა თუ არა Submit-ს?"
+  //  isSubmitted = "დააჭირა თუ არა Submit-ს?"
   // false = ჯერ არ დაუჭირავს, true = უკვე დააჭირა
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -21,9 +21,9 @@ function App() {
     // ეს ხელს უშლის გვერდის გადატვირთვას (ფორმების ნაგულისხმევი ქცევა)
     e.preventDefault();
     
-    // 🧠 თუ რაიმე ციფრი არჩეულია (არა null), მაშინ გადავდივართ "მადლობის" ეკრანზე.
+    //  თუ რაიმე ციფრი არჩეულია (არა null), მაშინ გადავდივართ "მადლობის" ეკრანზე.
     // წარმოიდგინე — თუ ფანქარი აიღე, ხატვა შეგიძლია.
-    // თუ არ აიღე, ვერ ხატავ 🖍️
+    // თუ არ აიღე, ვერ ხატავ 
     if (selectedRating) {
       setIsSubmitted(true);
     }
@@ -32,7 +32,7 @@ function App() {
 
   const getRatingBtnClass = (num) => {
 
-    // 🎨 ეს არის ღილაკის "ძირითადი სახე" — ყოველთვის ერთნაირია
+    //  ეს არის ღილაკის "ძირითადი სახე" — ყოველთვის ერთნაირია
     // ზომა, მრგვალი ფორმა, ტექსტის სტილი და ა.შ.
     const base = [
       "w-12 h-12",
@@ -43,15 +43,15 @@ function App() {
       "font-bold text-base",
     ].join(" ");
 
-    // 🟠 როდესაც ამ ღილაკს დააჭერ — ის ნაცრისფერი ხდება
+    //  როდესაც ამ ღილაკს დააჭერ — ის ნაცრისფერი ხდება
     // (ნიშნავს "ეს ავარჩიე!")
     const selected = "bg-[#7c8798] text-white";
 
-    // ⚫ როდესაც ამ ღილაკს არ დააჭერ — მუქი და ნაცრისფერი ტექსტი
+    //  როდესაც ამ ღილაკს არ დააჭერ — მუქი და ნაცრისფერი ტექსტი
     // hover-ზე კი ნარინჯისფერი ხდება
     const unselected = "bg-[#262e38] text-[#969fad] hover:bg-[#fb7413] hover:text-white";
 
-    // 🧠 ეს კითხვაა: "ეს ღილაკი (num) ისაა, რომელიც ავარჩიე (selectedRating)?"
+    // ეს კითხვაა: "ეს ღილაკი (num) ისაა, რომელიც ავარჩიე (selectedRating)?"
     // თუ კი  → selected სტილი (ნაცრისფერი)
     // თუ არა → unselected სტილი (მუქი, hover-ზე ნარინჯი)
     return `${base} ${selectedRating === num ? selected : unselected}`;
@@ -60,7 +60,7 @@ function App() {
 
   const getSubmitClass = () => {
 
-    // 🎨 Submit ღილაკის "ძირითადი სახე" — ყოველთვის ერთნაირია
+    // Submit ღილაკის "ძირითადი სახე" — ყოველთვის ერთნაირია
     const base = [
       "w-full py-3",
       "rounded-full",
@@ -69,15 +69,15 @@ function App() {
       "bg-[#fb7413] text-white",
     ].join(" ");
 
-    // ✅ თუ ციფრი არჩეულია — ღილაკი "ცოცხალია"
+    //  თუ ციფრი არჩეულია — ღილაკი "ცოცხალია"
     // hover-ზე თეთრი ხდება, cursor ჩვეულებრივი ისარია
     const active = "hover:bg-white hover:text-[#fb7413] cursor-pointer";
 
-    // 🚫 თუ ციფრი არ არის არჩეული — ღილაკი "მკვდარია"
+    //  თუ ციფრი არ არის არჩეული — ღილაკი "მკვდარია"
     // გამჭვირვალე (opacity 50%) და მაუსი "აკრძალვის" ნიშანს აჩვენებს
     const disabled = "opacity-50 cursor-not-allowed";
 
-    // 🧠 კითხვა: "არჩეულია რაიმე ციფრი?"
+    //  კითხვა: "არჩეულია რაიმე ციფრი?"
     // თუ კი  → active  (შეიძლება დაჭერა)
     // თუ არა → disabled (ჯერ ვერ დააჭერ)
     return `${base} ${selectedRating ? active : disabled}`;
@@ -87,10 +87,10 @@ function App() {
   return (
     <main className="flex items-center justify-center min-h-screen bg-[#131518] px-4 font-sans">
 
-      {/* 🧠 ეს კითხვაა: "დააჭირა თუ არა Submit-ს?"
+      {/*  ეს კითხვაა: "დააჭირა თუ არა Submit-ს?"
           თუ არა (false) → Rating ბარათს ვაჩვენებთ
           თუ კი  (true)  → Thank You ბარათს ვაჩვენებთ
-          წარმოიდგინე შუქნიშანი — წითელი/მწვანე 🚦 */}
+          წარმოიდგინე შუქნიშანი — წითელი/მწვანე  */}
       {!isSubmitted ? (
 
         <div className="bg-[#1e252f] p-8 rounded-[30px] w-full max-w-[400px] shadow-2xl">
@@ -112,14 +112,14 @@ function App() {
           </p>
 
           <div className="flex justify-between mb-8">
-            {/* 🧠 ratings = [1,2,3,4,5]
+            {/*  ratings = [1,2,3,4,5]
                 .map() ნიშნავს — "თითოეული ციფრისთვის გააკეთე ღილაკი"
-                წარმოიდგინე — 5 ცარიელი კვერცხის ყუთი და თითოეულში ერთი კვერცხი ჩადე 🥚🥚🥚🥚🥚 */}
+                წარმოიდგინე — 5 ცარიელი კვერცხის ყუთი და თითოეულში ერთი კვერცხი ჩადე  */}
             {ratings.map((num) => (
               <button
                 key={num}
                 type="button"
-                // 🧠 დაჭერისას setSelectedRating-ს ვეუბნებით "დაიმახსოვრე ეს ციფრი"
+                //  დაჭერისას setSelectedRating-ს ვეუბნებით "დაიმახსოვრე ეს ციფრი"
                 onClick={() => setSelectedRating(num)}
                 className={getRatingBtnClass(num)}
               >
@@ -130,7 +130,7 @@ function App() {
 
           <button
             onClick={handleSubmit}
-            // 🧠 !selectedRating = "არ არის არჩეული?"
+            //  !selectedRating = "არ არის არჩეული?"
             // თუ კი → disabled=true  (ღილაკი გათიშულია)
             // თუ არა → disabled=false (ღილაკი ჩართულია)
             disabled={!selectedRating}
@@ -151,7 +151,7 @@ function App() {
           />
 
           <div className="bg-[#262e38] px-4 py-1.5 rounded-full mb-8">
-            {/* 🧠 selectedRating-ში ახსოვს რომელი ციფრი აირჩია
+            {/*  selectedRating-ში ახსოვს რომელი ციფრი აირჩია
                 იმას პირდაპირ ვაჩვენებთ ტექსტში */}
             <p className="text-[#fb7413] text-[15px]">
               You selected {selectedRating} out of 5
